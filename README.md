@@ -48,7 +48,9 @@ Groq LLM
       ↓
 Grounded Answer + Source References
 ```
+### Architecture Diagram
 
+![DocuMind AI Architecture](assets/architecture.png)
 ---
 
 ## 🛠️ Technologies Used

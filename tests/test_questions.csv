@@ -1,0 +1,21 @@
+Test_ID,Question,Expected_Result,Test_Type
+TC01,What is Big Data?,Answer should be found from the uploaded document,Document-based
+TC02,What are the three categories of digital data?,Answer should be found from the uploaded document,Document-based
+TC03,What is Big Data Analytics?,Answer should be found from the uploaded document,Document-based
+TC04,What are the types of analytics?,Answer should be found from the uploaded document,Document-based
+TC05,What is the CAP Theorem?,Answer should be found from the uploaded document,Document-based
+TC06,What are the 3 V's of Big Data?,Answer should be found from the uploaded document,Document-based
+TC07,What are the features of NoSQL databases?,Answer should be found from the uploaded document,Document-based
+TC08,What are the advantages of NoSQL databases?,Answer should be found from the uploaded document,Document-based
+TC09,What are the different types of NoSQL databases?,Answer should be found from the uploaded document,Document-based
+TC10,What is Hadoop YARN?,Answer should be found from the uploaded document,Document-based
+TC11,What are the major components of HDFS 2?,Answer should be found from the uploaded document,Document-based
+TC12,What is the role of the Resource Manager in YARN?,Answer should be found from the uploaded document,Document-based
+TC13,What is MapReduce programming?,Answer should be found from the uploaded document,Document-based
+TC14,What is the role of the Mapper in MapReduce?,Answer should be found from the uploaded document,Document-based
+TC15,What is the role of the Reducer in MapReduce?,Answer should be found from the uploaded document,Document-based
+TC16,What is the capital of Japan?,System should refuse because the information is not in the uploaded document,Unavailable
+TC17,Who is the current President of the United States?,System should refuse because the information is not in the uploaded document,Unavailable
+TC18,What is the population of Bengaluru?,System should refuse because the information is not in the uploaded document,Unavailable
+TC19,What is the latest version of Python?,System should refuse because the information is not in the uploaded document,Unavailable
+TC20,Who is the CEO of Google?,System should refuse because the information is not in the uploaded document,Unavailable
