@@ -735,7 +735,35 @@ st.markdown(
 
         padding-bottom: 15px;
     }
+    /* ========================================================
+       READABLE MARKDOWN TABLES
+       ======================================================== */
 
+    .stMarkdown table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #15130f;
+    }
+
+    .stMarkdown table th {
+        background: #211b12;
+        color: #ffc857 !important;
+        font-weight: 750 !important;
+        padding: 10px !important;
+        border: 1px solid #3a301f !important;
+    }
+
+    .stMarkdown table td {
+        background: #15130f !important;
+        color: #f1eadc !important;
+        padding: 10px !important;
+        border: 1px solid #3a301f !important;
+    }
+
+    .stMarkdown table tr:hover td {
+        background: #201a11 !important;
+        color: #fff7e5 !important;
+    }
 </style>
 """,
     unsafe_allow_html=True
