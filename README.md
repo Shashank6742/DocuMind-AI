@@ -1,235 +1,153 @@
-# 🧠 DocuMind AI — Academic Knowledge & Student Assistant
+# 🧠 DocuMind AI
 
-DocuMind AI is a domain-specific **Retrieval-Augmented Generation (RAG) chatbot** that allows students to upload academic PDF documents and ask questions about their content.
+### Academic Knowledge & Student Assistant
 
-Instead of relying only on general AI knowledge, DocuMind AI retrieves relevant information from the uploaded documents and generates answers grounded in that content.
+DocuMind AI is a domain-specific Retrieval-Augmented Generation (RAG) chatbot designed to answer questions from uploaded academic PDF documents.
 
----
+It combines document processing, semantic search, vector embeddings, FAISS, and a Large Language Model to provide document-grounded answers with source and page references.
 
-## 🎯 Project Objective
+## ✨ Features
 
-The main objective of DocuMind AI is to provide students with an intelligent document-based learning assistant that can:
-
-- Upload one or multiple academic PDFs
-- Extract text from PDF documents
-- Divide documents into smaller chunks
-- Convert text into vector embeddings
-- Store embeddings using FAISS
-- Retrieve relevant information for a question
-- Generate answers using an LLM
-- Display document and page references
-- Avoid generating unsupported information
-
----
-
-## 🚀 Key Features
-
-### 📚 Multi-PDF Upload
-Users can upload multiple academic PDF documents and create a searchable knowledge base.
-
-### ✂️ Intelligent Text Chunking
-Extracted document text is divided into smaller overlapping chunks for effective retrieval.
-
-### 🔎 Semantic Search
-Sentence Transformers convert document chunks and user questions into embeddings for similarity-based retrieval.
-
-### ⚡ FAISS Vector Search
-FAISS is used to efficiently search for the most relevant document chunks.
-
-### 🤖 Grounded AI Answers
-Retrieved document content is provided to the LLM so that answers are generated using the uploaded knowledge base.
-
-### 📄 Source References
-Answers are accompanied by the relevant document name and page number.
-
-### 🛡️ Hallucination Prevention
-If the required information cannot be found in the uploaded documents, the system avoids inventing an answer.
-
-### 💬 Interactive Chat Interface
-Students can naturally ask multiple questions through the Streamlit chat interface.
-
-### 🗂️ Knowledge Base Management
-Users can view uploaded documents, page counts and indexed chunks, and remove documents when required.
-
----
+- 📄 Upload one or multiple academic PDF documents
+- 🔍 Extract text from PDF pages
+- ✂️ Split documents into searchable knowledge chunks
+- 🧠 Generate semantic embeddings using Sentence Transformers
+- ⚡ Store and search embeddings using FAISS
+- 💬 Ask natural-language questions about uploaded documents
+- 🤖 Generate answers using a Groq-powered LLM
+- 📚 Display source documents and page references
+- 🚫 Avoid unsupported answers when information is not present
+- 🗂️ Manage uploaded documents
+- 🧹 Clear the knowledge base when required
+- 🎨 Professional dark gold/orange Streamlit interface
 
 ## 🏗️ System Architecture
 
 ```text
-        ┌──────────────────────┐
-        │      PDF Upload      │
-        └──────────┬───────────┘
-                   ↓
-        ┌──────────────────────┐
-        │   Text Extraction    │
-        │        pypdf         │
-        └──────────┬───────────┘
-                   ↓
-        ┌──────────────────────┐
-        │   Text Chunking      │
-        └──────────┬───────────┘
-                   ↓
-        ┌──────────────────────┐
-        │ Sentence Transformer │
-        │     Embeddings       │
-        └──────────┬───────────┘
-                   ↓
-        ┌──────────────────────┐
-        │    FAISS Index       │
-        └──────────┬───────────┘
-                   │
-                   │
-        User Question
-                   ↓
-        ┌──────────────────────┐
-        │   Query Embedding    │
-        └──────────┬───────────┘
-                   ↓
-        ┌──────────────────────┐
-        │ Similarity Search    │
-        └──────────┬───────────┘
-                   ↓
-        ┌──────────────────────┐
-        │ Relevant Top-K       │
-        │      Chunks          │
-        └──────────┬───────────┘
-                   ↓
-        ┌──────────────────────┐
-        │      Groq LLM        │
-        └──────────┬───────────┘
-                   ↓
-        ┌──────────────────────┐
-        │ Grounded Answer +    │
-        │ Document/Page Source │
-        └──────────────────────┘
+PDF Documents
+      ↓
+Text Extraction
+      ↓
+Text Chunking
+      ↓
+Sentence Transformer Embeddings
+      ↓
+FAISS Vector Database
+      ↓
+User Question
+      ↓
+Semantic Similarity Search
+      ↓
+Top Relevant Chunks
+      ↓
+Groq LLM
+      ↓
+Grounded Answer + Source References
 🛠️ Technologies Used
 Technology	Purpose
 Python	Core programming language
 Streamlit	Web application interface
-pypdf	PDF text extraction
-Sentence Transformers	Text embeddings
+PyPDF	PDF text extraction
+Sentence Transformers	Semantic text embeddings
 FAISS	Vector similarity search
-NumPy	Numerical operations
-Groq	Large Language Model API
-PyTorch	Deep learning framework
+NumPy	Numerical processing
+Groq	Large Language Model
 python-dotenv	Environment variable management
-📂 Project Structure
+📁 Project Structure
 DocuMind-AI/
 │
-├── app.py
-├── rag_pipeline.py
-├── document_loader.py
-├── vector_store.py
-├── prompt.py
+├── assets/
+│   ├── home.png
+│   ├── question-answer.png
+│   ├── multiple-sources.png
+│   └── refusal-test.png
 │
+├── app.py
+├── document_loader.py
+├── rag_pipeline.py
 ├── requirements.txt
 ├── README.md
-├── .gitignore
-├── .env
-│
-├── documents/
-├── vector_store/
-├── tests/
-└── assets/
+└── .gitignore
 ⚙️ Installation
 1. Clone the Repository
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Shashank6742/DocuMind-AI.git
 cd DocuMind-AI
-2. Create Virtual Environment
+2. Create a Virtual Environment
 python -m venv venv
-3. Activate Virtual Environment
+3. Activate the Virtual Environment
 
 For Command Prompt:
 
 venv\Scripts\activate
-4. Install Dependencies
+4. Install Required Packages
 pip install -r requirements.txt
-🔑 Groq API Key Setup
+🔑 Groq API Configuration
 
-Create a .env file in the project root:
+Create a .env file in the project folder:
 
 GROQ_API_KEY=your_api_key_here
 
 Do not upload the .env file to GitHub.
 
-The API key is kept private using .gitignore.
-
 ▶️ Run the Application
-
-Start the Streamlit application using:
-
 streamlit run app.py
 
 The application will open in your browser.
 
-📖 How to Use
-Step 1
-
-Open DocuMind AI.
-
-Step 2
-
+💡 How to Use
+Launch DocuMind AI.
 Upload one or more academic PDF documents.
-
-Step 3
-
-Wait for the documents to be processed and indexed.
-
-Step 4
-
+The documents are processed and indexed.
 Enter a question related to the uploaded documents.
-
-Step 5
-
-DocuMind AI retrieves the most relevant document chunks.
-
-Step 6
-
-The retrieved information is sent to the LLM.
-
-Step 7
-
-The system displays:
-
-AI-generated answer
-Source document
-Relevant page number
-Source content preview
+DocuMind AI retrieves the most relevant information.
+The LLM generates a grounded response.
+Source documents and page references are displayed with the answer.
+If the information is not available, the system informs the user instead of inventing an answer.
 🧪 Testing
 
-The application was tested using:
+The application was tested using both document-related and out-of-document questions.
 
-Questions whose answers exist in uploaded documents
-Questions requiring specific document information
-Questions whose answers are not available in the uploaded documents
+Test 1 — Document-Based Question
 
-The system is designed to provide grounded responses and avoid unsupported answers.
+Question: What is Big Data?
 
-🔐 Privacy & Security
-API keys are stored in environment variables.
-.env is excluded from GitHub using .gitignore.
-Uploaded documents are used as the knowledge source for retrieval.
-The chatbot is designed to answer based on retrieved document content.
-🎓 Academic Use
+The system retrieves relevant information from the uploaded academic document and generates a grounded answer with source references.
 
-DocuMind AI can be used by students for:
+Test 2 — Classification Question
 
-Subject notes
-Academic textbooks
-Study materials
-College documentation
-Technical PDFs
-Revision and question answering
-👨‍💻 Project
+Question: What are the three categories of digital data?
 
-DocuMind AI — Academic Knowledge & Student Assistant
+The system identifies the relevant document sections and displays the answer with page references.
 
-A domain-specific RAG chatbot developed as an academic internship major project.
+Test 3 — Out-of-Document Question
 
-📌 Future Enhancements
+Question: What is the capital of Japan?
 
-Possible future improvements include:
+Since the information is not available in the uploaded document, the system responds that the information could not be found instead of generating an unsupported answer.
 
+📸 Project Screenshots
+🏠 Home Interface
+
+The main interface provides PDF upload, knowledge-base statistics, document management, and the DocuMind AI chat interface.
+
+💬 Document-Grounded Question Answering
+
+The chatbot retrieves relevant information from the uploaded academic document and generates a grounded answer.
+
+📚 Retrieved Sources and Page References
+
+Relevant document chunks are displayed with their source document and page references.
+
+🚫 Out-of-Document Question Handling
+
+When the requested information is not available in the uploaded documents, DocuMind AI avoids generating an unsupported answer.
+
+🔒 Privacy and Security
+API keys are stored using environment variables.
+.env is excluded from version control.
+Uploaded documents are processed for the application's knowledge base.
+The chatbot is designed to ground answers in the uploaded documents.
+🚀 Future Enhancements
 Conversation memory
 Multiple knowledge-base collections
 Document summarization
@@ -237,31 +155,10 @@ User feedback system
 Improved retrieval ranking
 Support for additional document formats
 Deployment as a cloud application
+🎓 Academic Project
 
-## 📸 Project Screenshots
+Project: DocuMind AI — Academic Knowledge & Student Assistant
 
-DocuMind AI provides a professional interface for uploading academic documents, asking questions, retrieving relevant information, and displaying document sources with page references.
+Domain: Artificial Intelligence / Natural Language Processing / Retrieval-Augmented Generation
 
-### 🏠 Home Interface
-
-![DocuMind AI Home](./assets/home.png)
-
-The main interface provides PDF upload, knowledge-base statistics, document management, and the DocuMind AI chat interface.
-
-### 💬 Document-Grounded Question Answering
-
-![Question Answering](./assets/question-answer.png)
-
-The chatbot retrieves relevant information from the uploaded document and generates an answer based on the available content.
-
-### 📚 Retrieved Sources and Page References
-
-![Retrieved Sources](./assets/multiple-sources.png)
-
-Relevant document chunks are displayed with their source document and page references to improve transparency and verification.
-
-### 🚫 Out-of-Document Question Handling
-
-![Refusal Test](./assets/refusal-test.png)
-
-When the requested information is not available in the uploaded documents, DocuMind AI avoids generating an unsupported answer and informs the user that the information could not be found.
+Purpose: Domain-specific question answering from academic PDF documents.
