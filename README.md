@@ -242,16 +242,16 @@ Deployment as a cloud application
 
 ### 🏠 DocuMind AI — Home Interface
 
-![DocuMind AI Home](assets/home.png)
+<img src="./assets/home.png" alt="DocuMind AI Home" width="900">
 
 ### 💬 Document-Grounded Question Answering
 
-![Question Answering](assets/question-answer.png)
+<img src="./assets/question-answer.png" alt="Question Answering" width="900">
 
 ### 📚 Retrieved Sources with Page References
 
-![Multiple Sources](assets/multiple-sources.png)
+<img src="./assets/multiple-sources.png" alt="Multiple Sources" width="900">
 
 ### 🚫 Out-of-Document Question Handling
 
-![Refusal Test](assets/refusal-test.png)
+<img src="./assets/refusal-test.png" alt="Refusal Test" width="900">
