@@ -240,18 +240,28 @@ Deployment as a cloud application
 
 ## 📸 Project Screenshots
 
-### 🏠 DocuMind AI — Home Interface
+DocuMind AI provides a professional interface for uploading academic documents, asking questions, retrieving relevant information, and displaying document sources with page references.
 
-<img src="./assets/home.png" alt="DocuMind AI Home" width="900">
+### 🏠 Home Interface
+
+![DocuMind AI Home](./assets/home.png)
+
+The main interface provides PDF upload, knowledge-base statistics, document management, and the DocuMind AI chat interface.
 
 ### 💬 Document-Grounded Question Answering
 
-<img src="./assets/question-answer.png" alt="Question Answering" width="900">
+![Question Answering](./assets/question-answer.png)
 
-### 📚 Retrieved Sources with Page References
+The chatbot retrieves relevant information from the uploaded document and generates an answer based on the available content.
 
-<img src="./assets/multiple-sources.png" alt="Multiple Sources" width="900">
+### 📚 Retrieved Sources and Page References
+
+![Retrieved Sources](./assets/multiple-sources.png)
+
+Relevant document chunks are displayed with their source document and page references to improve transparency and verification.
 
 ### 🚫 Out-of-Document Question Handling
 
-<img src="./assets/refusal-test.png" alt="Refusal Test" width="900">
+![Refusal Test](./assets/refusal-test.png)
+
+When the requested information is not available in the uploaded documents, DocuMind AI avoids generating an unsupported answer and informs the user that the information could not be found.
