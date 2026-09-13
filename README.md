@@ -237,3 +237,21 @@ User feedback system
 Improved retrieval ranking
 Support for additional document formats
 Deployment as a cloud application
+
+## 📸 Project Screenshots
+
+### 🏠 DocuMind AI — Home Interface
+
+![DocuMind AI Home](assets/home.png)
+
+### 💬 Document-Grounded Question Answering
+
+![Question Answering](assets/question-answer.png)
+
+### 📚 Retrieved Sources with Page References
+
+![Multiple Sources](assets/multiple-sources.png)
+
+### 🚫 Out-of-Document Question Handling
+
+![Refusal Test](assets/refusal-test.png)
